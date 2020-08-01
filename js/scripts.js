@@ -14,8 +14,12 @@ $(document).ready(function () {
     $("#sub").click(function () {
         $("#tForm").submit(function (event) {
             event.preventDefault();
-            var size = $('#size').val();
+            var toppings = $('#toppings').val();
             var crust = $('#crust').val();
+            var sizeAr = [];
+            $("input[type=checkbox]:checked").each(function () {
+                sizeAr.push($(this).val());
+            })
 
 
 
