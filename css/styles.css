@@ -4,6 +4,7 @@ img{
 
 }
 
+
 .intro{
     position: absolute;
     top: 10%;
@@ -15,3 +16,28 @@ img{
 #size{
     padding-top: 20px;
 }
+
+#crust{
+    padding-top: 20px;
+}
+
+#topping{
+    padding-top: 20px;
+}
+
+
+
+/* #sub{
+    padding-top: 10px;
+} */
+
+form{
+    
+    background-color:coral;
+    color:white;
+    border-radius:5px;
+    height:auto;
+    width:450px;
+    margin-top: 50px;
+   
+  }
