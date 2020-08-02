@@ -1,35 +1,48 @@
+
+//BUSINESS LOGIC
+function order(size, crust, topping) {
+    this.siz = size;
+    this.cr = crust;
+    this.top = topping;
+
+}
+order.prototype.summary = function () {
+    return "size: " + this.siz + ", crust:" + this.cr + ", topping:" + this.top
+}
+
+//USER INTERFACE
 $(document).ready(function () {
-    //BUSINESS LOGIC
-    function order(size, crust, toppings, number) {
-        this.siz = size;
-        this.cr = crust;
-        this.top = toppings;
-
-    }
-    order.prototype.summary = function () {
-        return "pizzasize: " + this.siz + ", crust:" + this.cr + ", toppings:" + this.top
-    }
-
-    //USER INTERFACE
-    $("#sub").click(function () {
-        $("#tForm").submit(function (event) {
-            event.preventDefault();
-            var toppings = $('#toppings').val();
-            var crust = $('#crust').val();
-            var sizeAr = [];
-            $("input[type=checkbox]:checked").each(function () {
-                sizeAr.push($(this).val());
-            })
 
 
 
-            $('#deliver').click(function () {
-                alert("");
-                var location = prompt("enter ur location");
-                alert("your order will be delivered to" + " " + location);
-            });
+    $('#sub').click(function (event) {
+        event.preventDefault();
+        var crust = $('#crust').val();
+        var crustName = $("#crust option:selected").text();
+        var size = $('#size').val();
+        // var topping = $("input[type=checkbox]:checked").val()
+        var topping = [];
+        $.each($("input[type=checkbox]:checked"), function () {
+            topping.push($(this).val());
+        });
+        console.log(topping)
+        var toppingsValue = 0;
+        for (var i = 0; i < topping.length; i++) {
+            toppingsValue += parseInt(topping[i]);
+        }
+        console.log(toppingsValue)
 
-        })
+        var tot = (parseInt(size) + parseInt(crust) + parseInt(toppingsValue));
+        alert("Total cost is " + tot);
+
+        $("#myselect option:selected").text();
     });
 
+
+    $('#deliver').click(function () {
+        alert("delivery cost is 400");
+        var location = prompt("enter ur location");
+        alert("your order will be delivered to" + " " + location);
+    });
 })
+

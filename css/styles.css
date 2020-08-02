@@ -4,7 +4,6 @@ img{
 
 }
 
-
 .intro{
     position: absolute;
     top: 10%;
@@ -12,24 +11,6 @@ img{
     color:yellow;
     text-align: center;
 }
-
-#size{
-    padding-top: 20px;
-}
-
-#crust{
-    padding-top: 20px;
-}
-
-#topping{
-    padding-top: 20px;
-}
-
-
-
-/* #sub{
-    padding-top: 10px;
-} */
 
 form{
     
