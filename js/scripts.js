@@ -59,7 +59,8 @@ $(document).ready(function () {
     });
 
     $('#finalOrder').click(function () {
-        alert(total)
+        $(sessionStorage.getItem('overallPrice'))
+        alert('total price is')
     })
 })
 
