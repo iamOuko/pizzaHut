@@ -43,13 +43,26 @@ $(document).ready(function () {
 
         var finalTotal = (parseInt(size) + parseInt(crust) + parseInt(toppingsValue));
         $("#summary").append("<p>" + ' size:' + sizeName + ' crust:' + crustName + ' total:' + finalTotal + "</p>");
-
+        alert(finalTotal)
         var overallPrice = sessionStorage.getItem("overallPrice")
+        if (overallPrice == null) {
+            overallPrice = 0
+        }
         var total = parseInt(finalTotal) + parseInt(overallPrice)
         sessionStorage.setItem("overallPrice", total);
-        console.log(total)
+
+        console.log(sessionStorage.getItem('overallPrice'))
+
 
     });
+
+
+
+    $('#finalOrder').click(function () {
+        alert('total price is ' + sessionStorage.getItem('overallPrice'))
+        sessionStorage.removeItem('overallPrice')
+
+    })
 
 
     $('#deliver').click(function () {
@@ -58,9 +71,5 @@ $(document).ready(function () {
         alert("your order will be delivered to" + " " + location);
     });
 
-    $('#finalOrder').click(function () {
-        $(sessionStorage.getItem('overallPrice'))
-        alert('total price is')
-    })
 })
 
